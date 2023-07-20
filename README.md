@@ -45,7 +45,7 @@ Google Playstore link- https://play.google.com/store/apps/details?id=com.startop
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE), granting you the freedom to modify and distribute the code as per the terms of the license.
+This project is licensed under the [MIT License], granting you the freedom to modify and distribute the code as per the terms of the license.
 
 ## Acknowledgments
 
@@ -61,4 +61,5 @@ For any inquiries or support related to the app, please create an issue in the p
 
 ---
 
-Before running a project please check the build.gradle, proguard-rules.pro, gradle.properties files.
+Before running a project please check the proguard-rules.pro have this line
+-keepclassmembers class com.startop.a1min.ModelStory** { *; } .
