@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "570499627476",
+    "project_id": "startop-1min",
+    "storage_bucket": "startop-1min.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570499627476:android:902804060528d082d87e41",
+        "android_client_info": {
+          "package_name": "com.startop.a1min"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570499627476-439oedms9r6b78ccbi47kqaeonc49ftf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startop.a1min",
+            "certificate_hash": "e7db5a05ad0b83adca85d31023f04ec5fe489eba"
+          }
+        },
+        {
+          "client_id": "570499627476-kmps9d351a8tgggt7ufmrlfek72qh0cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnVqagc4aG0qkKa9IeVx5bOwgJi-TAJo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570499627476-kmps9d351a8tgggt7ufmrlfek72qh0cd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
