@@ -59,7 +59,9 @@ This app is developed by Ankit Kumar Lakra, and it's part of a personal project.
 
 For any inquiries or support related to the app, please create an issue in the project's repository on GitHub.
 
----
+## Important
 
-Before running a project please check the proguard-rules.pro have this line
--keepclassmembers class com.startop.a1min.ModelStory** { *; } .
+Before running a project please check the proguard-rules.pro have this line in Android Studio
+
+-keepclassmembers class com.startop.a1min.ModelStory** { *; } 
+---
