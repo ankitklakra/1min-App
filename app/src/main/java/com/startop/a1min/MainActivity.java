@@ -20,31 +20,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // When the activity is created, check for updates.
         checkForUpdate();
     }
 
     private void checkForUpdate() {
+        // Create an AppUpdateManager instance for managing app updates.
         AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(this);
 
-// Returns an intent object that you use to check for an update.
+        // Returns a Task that retrieves the update information from the Play Store.
         Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
 
-// Checks that the platform will allow the specified type of update.
+        // Add a listener to handle the update information retrieval success.
         appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            // Check if an update is available and if the update type is allowed (immediate).
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                    // This example applies an immediate update. To apply a flexible update
-                    // instead, pass in AppUpdateType.FLEXIBLE
                     && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                // Request the update.
+                // If an update is available and allowed, request the update flow.
                 try {
                     appUpdateManager.startUpdateFlowForResult(
-                            // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                            // Pass the update information retrieved earlier.
                             appUpdateInfo,
-                            // an activity result launcher registered via registerForActivityResult
+                            // Use the IMMEDIATE update type (you can use FLEXIBLE for non-blocking updates).
                             AppUpdateType.IMMEDIATE,
+                            // The current activity (this) initiates the update process.
                             this,
+                            // Provide a request code to identify the update request in onActivityResult.
                             MY_REQUEST_CODE);
                 } catch (IntentSender.SendIntentException e) {
+                    // Exception handling in case starting the update flow fails.
                     throw new RuntimeException(e);
                 }
             }
@@ -55,11 +59,13 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == MY_REQUEST_CODE) {
+            // Check if the update flow was successful (RESULT_OK) or not.
             if (resultCode != RESULT_OK) {
-                // If the update is cancelled or fails,
-                // you can request to start the update again.
+                // If the update is cancelled or fails, you can handle it here.
+                // For example, you can decide whether to request the update again.
+                // You might want to show a message to the user informing them about the update failure.
             }
         }
-
     }
+
 }
