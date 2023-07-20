@@ -4,6 +4,8 @@
 
 This project is an Android app called "1 Minute News," which allows users to view short news stories within one minute. The app displays a series of images and corresponding descriptions, each representing a news story. Users can swipe through the stories and read brief summaries of current news topics.
 
+Google Playstore link- https://play.google.com/store/apps/details?id=com.startop.a1min
+
 ## Features
 
 - Display short news stories with images and descriptions.
